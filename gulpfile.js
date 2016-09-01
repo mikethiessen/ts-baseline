@@ -5,6 +5,7 @@
 /* ----------------------------------------------------------------------- */
 
 var gulp = require('gulp'),
+    livingcss = require('livingcss'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -15,11 +16,29 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
+    path = require('path'),
     dest = {
         src: 'src',
         dist: 'dist'
     };
 
+
+/* ----------------------------------------------------------------------- */
+/* Styleguide Generator https://github.com/straker/livingcss */ 
+/* ----------------------------------------------------------------------- */
+
+livingcss(dest.src + '/styles/**/*.scss', dest.dist + '/styleguide', {
+  
+    loadcss: true,
+    minify: true,
+  
+    preprocess: function(context, template, Handlebars) {
+        context.title = 'Style Guide';
+        context.footerHTML = 'Think Shift';
+    },
+
+    template: dest.src + '/templates/styleguide/styleguide.hb'
+});
 
 
 /* ----------------------------------------------------------------------- */

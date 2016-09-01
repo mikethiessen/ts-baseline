@@ -7,8 +7,9 @@
 @import "_baseline/mixins";
 @import "_baseline/baseline";
 @import "_baseline/helper";
-
-
+@import "_baseline/basic-layout";
+@import "_baseline/accessibility";
+@import "_baseline/print";
 
 /* --------------------------------------------------------------------------- */
 /* GENERAL */
@@ -37,17 +38,11 @@ a {
 hr { border-top: 1px solid lighten(palette("text"), 75%); }
 
 
-
-
 /* --------------------------------------------------------------------------- */
 /* MODULES */
 /* --------------------------------------------------------------------------- */
 
-@import "_modules/headings";
-@import "_modules/basic-layout";
-@import "_modules/accessibility";
+@import "_modules/_headings/headings";
 
-// New modules go here
-// e.g. @import "_modules/buttons";
 
-@import "_modules/print";
+
