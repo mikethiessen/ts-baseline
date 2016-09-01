@@ -1,0 +1,42 @@
+/* ----------------------------------------------------------------------- */
+/* HELPER CLASSES */
+/* ----------------------------------------------------------------------- */
+
+// Clear fix for containers with floated children
+%clear {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.clear { @extend %clear; }
+
+// Hide from view and screen readers
+%hidden { display: none !important; }
+
+.hidden { @extend %hidden; }
+
+// Hide from view but make available to screen readers
+%visually-hidden {
+  border: 0;
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visually-hidden { @extend %visually-hidden; }
+
+%list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-reset { @extend %list-reset; }

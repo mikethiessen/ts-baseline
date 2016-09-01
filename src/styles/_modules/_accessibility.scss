@@ -1,0 +1,24 @@
+// Skip to content links for accessibility
+.skip {
+  @extend %visually-hidden;
+
+  background-color: #000;
+  background-color: rgba(#000, 0.6);
+  color: #fff;
+
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    text-align: center;
+    top: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+// Remove outline when focused via .skip-link
+.sidebar:focus,
+.main:focus { outline: none; }

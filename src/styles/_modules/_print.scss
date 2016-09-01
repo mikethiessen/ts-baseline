@@ -1,0 +1,48 @@
+@media print {
+
+  // Black prints faster
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  // Add underline to <a>
+  a,
+  a:visited { text-decoration: underline; }
+
+  // Display the href in brackets after <a>
+  a[href]:after { content: "("attr(href)")"; }
+
+  // Don't display undesirable href values
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after { content: ""; }
+
+  // Display the title in brackets after <abbr>
+  abbr[title]:after { content: "("attr(title)")"; }
+
+  // Print <thead> at the top of the page if there is a page break in the table
+  thead { display: table-header-group; }
+
+  // Avoid orphans and widows
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  // Avoid undesirable page breaks
+  pre,
+  blockquote,
+  tr,
+  img { page-break-inside: avoid; }
+
+  h2,
+  h3 { page-break-after: avoid; }
+}

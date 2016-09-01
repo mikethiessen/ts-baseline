@@ -1,0 +1,52 @@
+// Access values using palette() in _functions.scss
+// Quote color names to avoid interpolation errors
+$palette: (
+  "form": #222,
+  "text": #222,
+  "selection": #b3d4fc
+);
+
+// Access values using siteLayout() in _functions.scss
+$site_layout: (
+  line_height: 1.4,
+  margin: 4%,
+  padding: 20px,
+  width: 1000px
+);
+
+// Access values using fontSize() in _functions.scss
+$font_size: (
+  largest: 40px,
+  larger: 32px,
+  large: 24px,
+  medium: 18px,
+  normal: 16px,
+  small: 12px
+);
+
+// Access values using fontStack() in _functions.scss
+// Write stack as a single string to avoid compile errors
+$font_stack: (
+  default: 'sans-serif',
+  heading: 'sans-serif',
+  monospace: 'monospace, monospace'
+);
+
+// $z_list will generate a SASS map with a value for each item
+// The farther down the list the higher the value
+// Access values using zIndex() in _functions.scss
+// E.G. zIndex(bottom) = 1, zIndex(middle) = 2, etc.
+$z_list:
+  bottom,
+  middle,
+  top;
+
+$z_index: ();
+
+$z_count: 1;
+
+@each $item in $z_list {
+
+  $z_index: map-merge($z_index, ($item: $z_count));
+  $z_count: $z_count + 1;
+}

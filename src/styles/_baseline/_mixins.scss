@@ -1,0 +1,40 @@
+// Locally stored web-font
+@mixin localWebFont($font_name, $file_name) {
+
+  $font_path: "../fonts/";
+
+  @font-face {
+    font-family: $font_name;
+    font-style: normal;
+    font-weight: normal;
+    src: url($font_path + $file_name + ".eot");
+    src: url($font_path + $file_name + ".eot?#iefix") format("embedded-opentype"),
+         url($font_path + $file_name + ".woff") format("woff"),
+         url($font_path + $file_name + ".ttf") format("truetype"),
+         url($font_path + $file_name + ".svg#" + $file_name + "") format("svg");
+  };
+}
+
+// Grid layout
+@mixin gridLayout($parent_selector, $col_count) {
+
+  #{$parent_selector} {
+
+    .grid-cell {
+      width: 100% / $col_count;
+
+      &:nth-child(#{$col_count}n) { margin-right: 0; }
+
+      // New row
+      &:nth-child(#{$col_count}n+1) {
+        clear: left;
+        margin-left: 0;
+      }
+    }
+
+    // Calculate col width accounting for margin in _variables.scss
+    $margin_width: (100% - siteLayout(margin) * ($col_count - 1)) / $col_count;
+
+    &.has-margin > .grid-cell { width: $margin_width; }
+  }
+}

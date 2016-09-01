@@ -1,0 +1,54 @@
+// Shortcut for mapped colors in _variables.scss
+@function palette($key) {
+
+  @if map-has-key($palette, $key) {
+    @return map-get($palette, $key);
+  }
+
+  @warn "Unknown color `#{$key}` in $palette.";
+  @return null;
+}
+
+// Shortcut for mapped font stacks in _variables.scss
+@function fontStack($key) {
+
+  @if map-has-key($font_stack, $key) {
+    @return unquote(map-get($font_stack, $key));
+  }
+
+  @warn "Unknown stack of `#{$key}` in $font_stack.";
+  @return null;
+}
+
+// Shortcut for mapped font sizes in _variables.scss
+@function fontSize($key) {
+
+  @if map-has-key($font_size, $key) {
+    @return map-get($font_size, $key);
+  }
+
+  @warn "Unknown size of `#{$key}` in $font_size.";
+  @return null;
+}
+
+// Shortcut for mapped dimensions in _variables.scss
+@function siteLayout($key) {
+
+  @if map-has-key($site_layout, $key) {
+    @return map-get($site_layout, $key);
+  }
+
+  @warn "Unknown property of `#{$key}` in $site_layout.";
+  @return null;
+}
+
+// Shortcut for mapped z-index values in _variables.scss
+@function zIndex($key) {
+
+  @if map-has-key($z_index, $key) {
+    @return map-get($z_index, $key);
+  }
+
+  @warn "Unknown property of `#{$key}` in $z_index.";
+  @return null;
+}
