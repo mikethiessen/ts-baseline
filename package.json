@@ -10,7 +10,7 @@
     "type": "git",
     "url": "http://grantg@gitlab.thinkshiftinc.com/grantg/baseline.git"
   },
-  "author": "Grant Geard",
+  "author": "Grant Geard (mostly) and Mike Thiessen",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.12.1",
@@ -25,6 +25,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svg-sprite": "^1.2.19",
     "gulp-uglify": "^1.5.3",
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "livingcss": "^4.1.3"
   }
 }
