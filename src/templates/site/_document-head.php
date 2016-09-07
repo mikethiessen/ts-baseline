@@ -11,6 +11,7 @@
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
 
     <title>Website Title</title>
+
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -56,6 +57,73 @@
 
     <!-- Remove no-js class from html -->
     <script>!function(a){a.documentElement.className=''}(document);</script>
+
+    <!-- schema data: organization -->
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "Organization",
+            "name" : "[Company Name]",
+            "image": "[Company Image]",
+            "alternateName" : "[Company Alternative Name]",
+            "url" : "[Company URL]",
+            "email": "[Company Email]",
+            "faxNumber": "[Company Fax Number]",
+            "telephone": "[Company Phone Number]",
+            "sameAs" : [
+                "[Company LinkedIn URL]",
+                "[Company Facebook URL]",
+                "[Company Google+ URL]",
+                "[Company Twitter URL]"
+            ],
+            "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday"
+                  ],
+                  "opens": "11:30",
+                  "closes": "22:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                  ],
+                  "opens": "11:30",
+                  "closes": "23:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "16:00",
+                  "closes": "23:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Sunday",
+                  "opens": "16:00",
+                  "closes": "22:00"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.761293,
+                "longitude": -73.982294
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "[Company Street Address]",
+                "addressLocality": "[Company City]",
+                "addressRegion": "[Company Prov Abbr]",
+                "postalCode": "[Company Postal Code]",
+                "addressCountry": "[Company Country Code]"
+            }
+        }
+    </script>
 
     <link rel="stylesheet" href="/styles/main.css?v=<?php echo filemtime( $_SERVER['DOCUMENT_ROOT'] . '/styles/main.css' ); ?>">
 
